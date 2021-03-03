@@ -6,12 +6,11 @@
 /*   By: minsunki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/26 13:03:11 by minsunki          #+#    #+#             */
-/*   Updated: 2021/03/03 20:33:30 by minsunki         ###   ########.fr       */
+/*   Updated: 2021/03/04 00:52:46 by minsunki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 int		ft_digs(int n)
 {
