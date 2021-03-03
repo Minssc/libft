@@ -6,7 +6,7 @@
 /*   By: minsunki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/25 23:54:10 by minsunki          #+#    #+#             */
-/*   Updated: 2021/03/03 20:04:23 by minsunki         ###   ########.fr       */
+/*   Updated: 2021/03/03 20:49:52 by minsunki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ static void	assign_strings(char **arr, char const *str, char sep)
 		arr[i] = create_string(last, str);
 }
 
-char	**ft_split(char const *s, char c)
+char		**ft_split(char const *s, char c)
 {
 	char	**ret;
 	int		i;
