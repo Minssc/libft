@@ -6,7 +6,7 @@
 /*   By: minsunki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/13 13:17:30 by minsunki          #+#    #+#             */
-/*   Updated: 2021/03/03 20:29:51 by minsunki         ###   ########.fr       */
+/*   Updated: 2021/03/03 23:43:12 by minsunki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,23 @@
 
 size_t	ft_strlcat(char *dest, char *src, size_t size)
 {
-	unsigned int	dlen;
-	int				slen;
-	unsigned int	mlen;
-	int				i;
+	size_t	i;
+	size_t	dlen;
+	size_t	slen;
 
 	dlen = ft_strlen(dest);
 	slen = ft_strlen(src);
-	mlen = 0;
 	i = 0;
-	while (mlen < size && dest[mlen])
-		mlen++;
-	while (i < slen && dlen + i + 1 < size)
+	if (size < dlen + 1)
+		return (size + slen);
+	if (size > dlen + 1)
 	{
-		dest[dlen + i] = src[i];
-		i++;
+		while (src[i] != '\0' && dlen + 1 + i < size)
+		{
+			dest[dlen + i] = src[i];
+			i++;
+		}
 	}
-	dest[dlen + i] = 0;
-	return (mlen + slen);
+	dest[dlen + i] = '\0';
+	return (dlen + slen);
 }

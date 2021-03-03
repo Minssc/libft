@@ -6,7 +6,7 @@
 /*   By: minsunki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/22 13:10:54 by minsunki          #+#    #+#             */
-/*   Updated: 2021/03/03 20:31:53 by minsunki         ###   ########.fr       */
+/*   Updated: 2021/03/03 23:07:04 by minsunki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ char		*ft_strtrim(char const *s1, char const *set)
 	while (checkset(s1[s], set))
 		s++;
 	if ((size_t)s == ft_strlen(s1))
-		return ((char *)malloc(0));
+		return (ft_strdup(""));
 	while (checkset(s1[e], set))
 		e--;
 	if (!(ret = (char *)malloc(sizeof(char) * (e - s + 2))))

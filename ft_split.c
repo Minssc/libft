@@ -6,7 +6,7 @@
 /*   By: minsunki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/25 23:54:10 by minsunki          #+#    #+#             */
-/*   Updated: 2021/03/03 20:49:52 by minsunki         ###   ########.fr       */
+/*   Updated: 2021/03/03 23:55:57 by minsunki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,6 +86,8 @@ char		**ft_split(char const *s, char c)
 	char	**ret;
 	int		i;
 
+	if (!s || !c)
+		return (0);
 	i = count_strings(s, c);
 	if (!(ret = (char **)malloc(sizeof(char *) * (i + 1))))
 		return (0);
