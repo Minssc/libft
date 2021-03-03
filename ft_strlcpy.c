@@ -6,7 +6,7 @@
 /*   By: minsunki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/25 13:06:08 by minsunki          #+#    #+#             */
-/*   Updated: 2021/03/03 23:54:00 by minsunki         ###   ########.fr       */
+/*   Updated: 2021/03/04 00:59:32 by minsunki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ size_t	ft_strlcpy(char *dest, char *src, size_t size)
 	size_t i;
 	size_t ssize;
 
+	if (!dest || !src)
+		return (0);
 	i = 0;
 	ssize = ft_strlen(src);
 	if (!size)
