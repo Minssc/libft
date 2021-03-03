@@ -6,7 +6,7 @@
 /*   By: minsunki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/25 23:54:10 by minsunki          #+#    #+#             */
-/*   Updated: 2021/03/03 23:55:57 by minsunki         ###   ########.fr       */
+/*   Updated: 2021/03/04 00:40:14 by minsunki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@ static char	*create_string(char const *from, char const *to)
 	int		i;
 
 	i = 0;
-	ret = (char *)malloc(sizeof(char) * (int)(to - from + 1));
+	if (!(ret = (char *)malloc(sizeof(char) * (int)(to - from + 1))))
+		return (0);
 	while (i < (int)(to - from))
 	{
 		ret[i] = from[i];
@@ -52,13 +53,11 @@ static int	count_strings(char const *str, char sep)
 	return (is_str ? ret + 1 : ret);
 }
 
-static void	assign_strings(char **arr, char const *str, char sep)
+static int	assign_strings(char **arr, char const *str, char sep)
 {
 	char const	*last;
 	int			is_str;
-	int			i;
 
-	i = 0;
 	last = str;
 	is_str = 0;
 	while (*str)
@@ -66,7 +65,8 @@ static void	assign_strings(char **arr, char const *str, char sep)
 		if (sep == *str)
 		{
 			if (is_str)
-				arr[i++] = create_string(last, str);
+				if (!(*arr++ = create_string(last, str)))
+					return (0);
 			is_str = 0;
 			last = str;
 		}
@@ -77,8 +77,19 @@ static void	assign_strings(char **arr, char const *str, char sep)
 		}
 		str++;
 	}
-	if (is_str)
-		arr[i] = create_string(last, str);
+	if (is_str && !(*arr = create_string(last, str)))
+		return (0);
+	return (1);
+}
+
+static void freeall(char **arr)
+{
+	int i;
+
+	i = 0;
+	while (arr[i])
+		free(arr[i++]);
+	free(arr);
 }
 
 char		**ft_split(char const *s, char c)
@@ -86,12 +97,16 @@ char		**ft_split(char const *s, char c)
 	char	**ret;
 	int		i;
 
-	if (!s || !c)
+	if (!s)
 		return (0);
 	i = count_strings(s, c);
 	if (!(ret = (char **)malloc(sizeof(char *) * (i + 1))))
 		return (0);
 	ret[i] = 0;
-	assign_strings(ret, s, c);
+	if(!assign_strings(ret, s, c))
+	{
+		freeall(ret);
+		return (0);
+	}
 	return (ret);
 }
