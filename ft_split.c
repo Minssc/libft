@@ -6,7 +6,7 @@
 /*   By: minsunki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/25 23:54:10 by minsunki          #+#    #+#             */
-/*   Updated: 2021/03/04 00:43:40 by minsunki         ###   ########.fr       */
+/*   Updated: 2021/03/04 18:22:57 by minsunki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,9 +64,8 @@ static int	assign_strings(char **arr, char const *str, char sep)
 	{
 		if (sep == *str)
 		{
-			if (is_str)
-				if (!(*arr++ = create_string(last, str)))
-					return (0);
+			if (is_str && !(*arr++ = create_string(last, str)))
+				return (0);
 			is_str = 0;
 			last = str;
 		}

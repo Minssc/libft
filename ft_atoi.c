@@ -6,7 +6,7 @@
 /*   By: minsunki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/26 13:05:11 by minsunki          #+#    #+#             */
-/*   Updated: 2021/03/04 01:06:51 by minsunki         ###   ########.fr       */
+/*   Updated: 2021/03/04 19:30:44 by minsunki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ static int	ft_isspace(char c)
 
 int			ft_atoi(const char *str)
 {
-	int	result;
-	int	is_neg;
+	unsigned long long	result;
+	int					is_neg;
 
 	while (ft_isspace(*str))
 		str++;
@@ -38,5 +38,9 @@ int			ft_atoi(const char *str)
 		result += *str - '0';
 		str++;
 	}
+	if (result > 2147483647 && !is_neg)
+		return (-1);
+	if (result > 2147483648 && is_neg)
+		return (0);
 	return (is_neg ? -result : result);
 }
