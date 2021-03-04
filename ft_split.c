@@ -6,28 +6,11 @@
 /*   By: minsunki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/25 23:54:10 by minsunki          #+#    #+#             */
-/*   Updated: 2021/03/04 18:22:57 by minsunki         ###   ########.fr       */
+/*   Updated: 2021/03/04 21:45:01 by minsunki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-static char	*create_string(char const *from, char const *to)
-{
-	char	*ret;
-	int		i;
-
-	i = 0;
-	if (!(ret = (char *)malloc(sizeof(char) * (int)(to - from + 1))))
-		return (0);
-	while (i < (int)(to - from))
-	{
-		ret[i] = from[i];
-		i++;
-	}
-	ret[to - from] = '\0';
-	return (ret);
-}
 
 static int	count_strings(char const *str, char sep)
 {
@@ -64,7 +47,7 @@ static int	assign_strings(char **arr, char const *str, char sep)
 	{
 		if (sep == *str)
 		{
-			if (is_str && !(*arr++ = create_string(last, str)))
+			if (is_str && !(*arr++ = ft_substr(last, 0, str - last)))
 				return (0);
 			is_str = 0;
 			last = str;
@@ -76,7 +59,7 @@ static int	assign_strings(char **arr, char const *str, char sep)
 		}
 		str++;
 	}
-	if (is_str && !(*arr = create_string(last, str)))
+	if (is_str && !(*arr = ft_substr(last, 0, str - last)))
 		return (0);
 	return (1);
 }
@@ -87,7 +70,10 @@ static void	freeall(char **arr)
 
 	i = 0;
 	while (arr[i])
-		free(arr[i++]);
+	{
+		free(arr[i]);
+		i++;
+	}
 	free(arr);
 }
 
