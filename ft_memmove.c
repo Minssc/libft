@@ -6,7 +6,7 @@
 /*   By: minsunki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/07 13:20:59 by minsunki          #+#    #+#             */
-/*   Updated: 2021/03/03 20:28:46 by minsunki         ###   ########.fr       */
+/*   Updated: 2021/03/04 17:51:07 by minsunki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 
 	pd = (char *)dest;
 	ps = (char *)src;
-	if (dest == src)
+	if (dest == src || n == 0)
 		return (dest);
 	if (ps < pd)
 	{
