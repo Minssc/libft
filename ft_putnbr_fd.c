@@ -6,7 +6,7 @@
 /*   By: minsunki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/29 13:00:58 by minsunki          #+#    #+#             */
-/*   Updated: 2021/03/03 22:39:48 by minsunki         ###   ########.fr       */
+/*   Updated: 2021/03/04 17:56:08 by minsunki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@ void	ft_putnbr_fd(int n, int fd)
 {
 	char c;
 
-	c = '0';
+	if (fd < 0)
+		return ;
 	if (n == -2147483648)
 	{
 		ft_putnbr_fd(n / 10, fd);
@@ -31,7 +32,7 @@ void	ft_putnbr_fd(int n, int fd)
 	{
 		if (n >= 10)
 			ft_putnbr_fd(n / 10, fd);
-		c = c + (n % 10);
+		c = '0' + (n % 10);
 		write(fd, &c, 1);
 	}
 }
