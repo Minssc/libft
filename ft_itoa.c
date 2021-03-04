@@ -6,13 +6,13 @@
 /*   By: minsunki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/26 13:03:11 by minsunki          #+#    #+#             */
-/*   Updated: 2021/03/04 00:52:46 by minsunki         ###   ########.fr       */
+/*   Updated: 2021/03/04 17:40:37 by minsunki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_digs(int n)
+static int	ft_digs(int n)
 {
 	int		ret;
 
@@ -25,7 +25,7 @@ int		ft_digs(int n)
 	return (ret);
 }
 
-char	*ft_itoa(int n)
+char		*ft_itoa(int n)
 {
 	int		dig;
 	int		neg;
