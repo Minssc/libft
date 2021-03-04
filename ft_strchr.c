@@ -6,7 +6,7 @@
 /*   By: minsunki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/17 22:31:25 by minsunki          #+#    #+#             */
-/*   Updated: 2021/03/03 18:12:03 by minsunki         ###   ########.fr       */
+/*   Updated: 2021/03/04 17:59:49 by minsunki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 char	*ft_strchr(const char *s, int c)
 {
 	while (*s)
-		if (*s++ == c)
+		if (*s++ == (char)c)
 			return ((char *)--s);
-	if (*s == c)
+	if (*s == (char)c)
 		return ((char *)s);
 	return (0);
 }
