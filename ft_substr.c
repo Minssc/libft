@@ -6,7 +6,7 @@
 /*   By: minsunki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/20 13:07:27 by minsunki          #+#    #+#             */
-/*   Updated: 2021/03/03 20:31:19 by minsunki         ###   ########.fr       */
+/*   Updated: 2021/03/04 21:02:33 by minsunki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,6 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		len = ft_strlen(s + start);
 	if (!(dmem = (char *)malloc(sizeof(char) * (len + 1))))
 		return (0);
-	ft_strlcpy(dmem, (char *)s + start, len + 1);
+	ft_strlcpy(dmem, s + start, len + 1);
 	return (dmem);
 }

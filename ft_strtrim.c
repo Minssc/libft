@@ -6,7 +6,7 @@
 /*   By: minsunki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/22 13:10:54 by minsunki          #+#    #+#             */
-/*   Updated: 2021/03/03 23:07:04 by minsunki         ###   ########.fr       */
+/*   Updated: 2021/03/04 20:58:15 by minsunki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ char		*ft_strtrim(char const *s1, char const *set)
 {
 	int		s;
 	int		e;
-	int		i;
 	char	*ret;
 
 	if (!s1)
@@ -39,11 +38,6 @@ char		*ft_strtrim(char const *s1, char const *set)
 		return (ft_strdup(""));
 	while (checkset(s1[e], set))
 		e--;
-	if (!(ret = (char *)malloc(sizeof(char) * (e - s + 2))))
-		return (0);
-	ret[e - s + 1] = '\0';
-	i = 0;
-	while (s <= e)
-		ret[i++] = s1[s++];
+	ret = ft_substr(s1, s, e - s + 1);
 	return (ret);
 }
