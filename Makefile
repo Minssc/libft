@@ -6,7 +6,7 @@
 #    By: minsunki <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/06 13:03:52 by minsunki          #+#    #+#              #
-#    Updated: 2021/03/24 14:30:30 by minsunki         ###   ########.fr        #
+#    Updated: 2021/04/26 15:50:35 by minsunki         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,7 +45,8 @@ SRCS		= ft_atoi.c \
 			  ft_strtrim.c \
 			  ft_substr.c \
 			  ft_tolower.c \
-			  ft_toupper.c 
+			  ft_toupper.c \
+			  get_next_line.c 
 
 SRCS_B		= ft_lstnew.c \
 			  ft_lstadd_front.c \
