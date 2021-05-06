@@ -6,7 +6,7 @@
 #    By: minsunki <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/06 13:03:52 by minsunki          #+#    #+#              #
-#    Updated: 2021/05/07 01:13:37 by minsunki         ###   ########.fr        #
+#    Updated: 2021/05/07 01:26:24 by minsunki         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -58,8 +58,7 @@ SRCS_B		= ft_lstnew.c \
 			  ft_lstlast.c \
 			  get_next_line.c \
 			  ft_max.c \
-			  ft_min.c \
-			  ft_free.c
+			  ft_min.c 
 
 GCC			= gcc
 CFLAGS		= -Wall -Wextra -Werror
