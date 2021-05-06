@@ -6,7 +6,7 @@
 #    By: minsunki <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/06 13:03:52 by minsunki          #+#    #+#              #
-#    Updated: 2021/04/26 15:50:35 by minsunki         ###   ########.fr        #
+#    Updated: 2021/05/06 20:21:15 by minsunki         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,8 +45,7 @@ SRCS		= ft_atoi.c \
 			  ft_strtrim.c \
 			  ft_substr.c \
 			  ft_tolower.c \
-			  ft_toupper.c \
-			  get_next_line.c 
+			  ft_toupper.c 
 
 SRCS_B		= ft_lstnew.c \
 			  ft_lstadd_front.c \
@@ -56,31 +55,34 @@ SRCS_B		= ft_lstnew.c \
 			  ft_lstclear.c \
 			  ft_lstiter.c \
 			  ft_lstmap.c \
-			  ft_lstlast.c
+			  ft_lstlast.c \
+			  get_next_line.c \
+			  ft_max.c \
+			  ft_min.c 
 
 GCC			= gcc
 CFLAGS		= -Wall -Wextra -Werror
-OBJS		= ${SRCS:.c=.o}
-OBJS_B		= ${SRCS_B:.c=.o}
+OBJS		= $(SRCS:.c=.o)
+OBJS_B		= $(SRCS_B:.c=.o)
 RM			= rm -f
 AR			= ar rcs
 
 .c.o:
-			${GCC} ${CFLAGS} -c $< -o ${<:.c=.o}
+			$(GCC) $(CFLAGS) -c $< -o $(<:.c=.o)
 
-${NAME}:	${OBJS}
-			${AR} ${NAME} ${OBJS}
+$(NAME):	$(OBJS)
+			$(AR) $(NAME) $(OBJS)
 
-bonus:		${OBJS_B}
-			${AR} ${NAME} ${OBJS_B}
+bonus:		$(OBJS_B)
+			$(AR) $(NAME) $(OBJS_B)
 
-all:		${NAME}
+all:		$(NAME) bonus
 
 clean:		
-			${RM} ${OBJS} ${OBJS_B}
+			$(RM) $(OBJS) $(OBJS_B)
 
 fclean:		clean
-			${RM} ${NAME}
+			$(RM) $(NAME)
 
 re:			fclean all
 
