@@ -6,7 +6,7 @@
 /*   By: minsunki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/04 13:00:40 by minsunki          #+#    #+#             */
-/*   Updated: 2021/05/07 01:13:21 by minsunki         ###   ########.fr       */
+/*   Updated: 2021/05/07 01:27:25 by minsunki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,5 @@ int				ft_mini(int a, int b);
 long long		ft_minll(long long a, long long b);
 float			ft_minf(float a, float b);
 double			ft_maxd(double a, double b);
-
-void			ft_free(void **ptr);
 
 #endif
