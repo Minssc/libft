@@ -6,7 +6,7 @@
 /*   By: minsunki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/04 13:00:40 by minsunki          #+#    #+#             */
-/*   Updated: 2021/05/28 23:07:37 by minsunki         ###   ########.fr       */
+/*   Updated: 2021/06/06 18:13:53 by minsunki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,5 +94,7 @@ int				ft_absi(int v);
 long long		ft_absl(long long v);
 float			ft_absf(float v);
 double			ft_absd(double v);
+
+int				ft_isnumstr(char *str);
 
 #endif
