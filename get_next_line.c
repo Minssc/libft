@@ -6,7 +6,7 @@
 /*   By: minsunki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/07 23:20:08 by minsunki          #+#    #+#             */
-/*   Updated: 2021/05/28 23:17:37 by minsunki         ###   ########.fr       */
+/*   Updated: 2021/05/29 15:38:06 by minsunki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,7 @@ void			get_next_line_clear(void)
 
 	buf = get_buffer();
 	if (!*buf)
-		return ;	
+		return ;
 	free(*buf);
 	*buf = 0;
 }
