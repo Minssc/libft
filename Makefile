@@ -6,7 +6,7 @@
 #    By: minsunki <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/06 13:03:52 by minsunki          #+#    #+#              #
-#    Updated: 2021/06/09 23:22:34 by minsunki         ###   ########.fr        #
+#    Updated: 2021/06/09 23:50:52 by minsunki         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -71,7 +71,8 @@ SRCS_B		=	$(SRCS) \
 				ft_min.c \
 				ft_abs.c \
 				ft_atol.c \
-				ft_isnumstr.c
+				ft_isnumstr.c \
+				ft_queue.c 
 
 CC			=	gcc
 CFLAGS		=	-Wall -Wextra -Werror

@@ -6,7 +6,7 @@
 /*   By: minsunki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/04 13:00:40 by minsunki          #+#    #+#             */
-/*   Updated: 2021/06/09 23:26:21 by minsunki         ###   ########.fr       */
+/*   Updated: 2021/06/10 00:00:57 by minsunki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,20 @@ typedef struct	s_dlist
 	struct s_dlist	*prev;
 	struct s_dlist	*next;
 }				t_dlist;
+
+typedef struct	s_que
+{
+	t_dlist		*head;
+	t_dlist		*tail;
+	int			size;
+}				t_que;
+
+typedef struct	s_dque
+{
+	t_dlist		*head;
+	t_dlist		*tail;
+	int			size;
+}				t_dque;
 
 void			*ft_memset(void *s, int c, size_t n);
 void			ft_bzero(void *s, size_t n);
@@ -75,9 +89,9 @@ void			ft_putendl_fd(char *s, int fd);
 void			ft_putnbr_fd(int n, int fd);
 
 t_list			*ft_lstnew(void *content);
+t_list			*ft_lstlast(t_list *lst);
 void			ft_lstadd_front(t_list **lst, t_list *new);
 int				ft_lstsize(t_list *lst);
-t_list			*ft_lstlast(t_list *lst);
 void			ft_lstadd_back(t_list **lst, t_list *new);
 void			ft_lstdelone(t_list *lst, void (*del)(void *));
 void			ft_lstclear(t_list **lst, void (*del)(void *));
@@ -87,9 +101,9 @@ t_list			*ft_lstmap(t_list *lst, void *(*f)(void *),
 
 t_dlist			*ft_dlstnew(void *content);
 void			ft_dlstadd_front(t_dlist **lst, t_dlist *new);
+void			ft_dlstadd_back(t_dlist **lst, t_dlist *new);
 int				ft_dlstsize(t_dlist *lst);
 t_dlist			*ft_dlstlast(t_dlist *lst);
-void			ft_dlstadd_back(t_dlist **lst, t_dlist *new);
 void			ft_dlstdelone(t_dlist *lst, void (*del)(void *));
 void			ft_dlstclear(t_dlist **lst, void (*del)(void *));
 void			ft_dlstiter(t_dlist *lst, void (*f)(void *));
@@ -114,5 +128,11 @@ float			ft_absf(float v);
 double			ft_absd(double v);
 
 int				ft_isnumstr(char *str);
+
+void			ft_qpush(t_que *q, void *v);
+void			ft_qpop(t_que *q);
+void			*ft_qtop(t_que *q);
+int				ft_qempty(t_que *q);
+int				ft_qsize(t_que *q);
 
 #endif
