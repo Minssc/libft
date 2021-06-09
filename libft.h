@@ -6,7 +6,7 @@
 /*   By: minsunki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/04 13:00:40 by minsunki          #+#    #+#             */
-/*   Updated: 2021/06/09 14:29:27 by minsunki         ###   ########.fr       */
+/*   Updated: 2021/06/09 23:26:21 by minsunki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,13 @@ typedef struct	s_list
 	void			*content;
 	struct s_list	*next;
 }				t_list;
+
+typedef struct	s_dlist
+{
+	void			*content;
+	struct s_dlist	*prev;
+	struct s_dlist	*next;
+}				t_dlist;
 
 void			*ft_memset(void *s, int c, size_t n);
 void			ft_bzero(void *s, size_t n);
@@ -78,6 +85,16 @@ void			ft_lstiter(t_list *lst, void (*f)(void *));
 t_list			*ft_lstmap(t_list *lst, void *(*f)(void *),
 													void (*del)(void *));
 
+t_dlist			*ft_dlstnew(void *content);
+void			ft_dlstadd_front(t_dlist **lst, t_dlist *new);
+int				ft_dlstsize(t_dlist *lst);
+t_dlist			*ft_dlstlast(t_dlist *lst);
+void			ft_dlstadd_back(t_dlist **lst, t_dlist *new);
+void			ft_dlstdelone(t_dlist *lst, void (*del)(void *));
+void			ft_dlstclear(t_dlist **lst, void (*del)(void *));
+void			ft_dlstiter(t_dlist *lst, void (*f)(void *));
+t_dlist			*ft_dlstmap(t_dlist *lst, void *(*f)(void *),
+													void (*del)(void *));
 int				get_next_line(int fd, char **line);
 void			get_next_line_clear(void);
 
