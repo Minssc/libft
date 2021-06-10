@@ -6,7 +6,7 @@
 #    By: minsunki <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/06 13:03:52 by minsunki          #+#    #+#              #
-#    Updated: 2021/06/09 23:50:52 by minsunki         ###   ########.fr        #
+#    Updated: 2021/06/10 17:32:08 by minsunki         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -66,13 +66,15 @@ SRCS_B		=	$(SRCS) \
 				ft_dlstiter.c \
 				ft_dlstmap.c \
 				ft_dlstlast.c \
+				ft_dlstfirst.c \
 				get_next_line.c \
 				ft_max.c \
 				ft_min.c \
 				ft_abs.c \
 				ft_atol.c \
 				ft_isnumstr.c \
-				ft_queue.c 
+				ft_queue.c \
+				ft_queue_util.c 
 
 CC			=	gcc
 CFLAGS		=	-Wall -Wextra -Werror

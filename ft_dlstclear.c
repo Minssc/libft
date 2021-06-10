@@ -6,22 +6,42 @@
 /*   By: minsunki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 18:55:24 by minsunki          #+#    #+#             */
-/*   Updated: 2021/06/09 23:26:38 by minsunki         ###   ########.fr       */
+/*   Updated: 2021/06/10 17:44:08 by minsunki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_dlstclear(t_dlist **lst, void (*del)(void *))
+static void	dprev(t_dlist *lst, void (*del)(void *))
 {
 	t_dlist	*tmp;
 
-	if (!lst || !del)
-		return ;
-	while (*lst)
+	while (lst)
 	{
-		tmp = (*lst)->next;
-		ft_dlstdelone(*lst, del);
-		*lst = tmp;
+		tmp = lst->prev;
+		ft_dlstdelone(lst, del);
+		lst = tmp;
 	}
+}
+
+static void	dnext(t_dlist *lst, void (*del)(void *))
+{
+	t_dlist	*tmp;
+
+	while (lst)
+	{
+		tmp = lst->next;
+		ft_dlstdelone(lst, del);
+		lst = tmp;
+	}
+}
+
+void		ft_dlstclear(t_dlist **lst, void (*del)(void *))
+{
+	if (!del || !lst || !*lst)
+		return ;
+	dprev((*lst)->prev, del);
+	dnext((*lst)->next, del);
+	ft_dlstdelone(*lst, del);
+	*lst = 0;
 }
