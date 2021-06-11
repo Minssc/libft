@@ -6,7 +6,7 @@
 #    By: minsunki <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/06 13:03:52 by minsunki          #+#    #+#              #
-#    Updated: 2021/06/10 17:32:08 by minsunki         ###   ########.fr        #
+#    Updated: 2021/06/11 20:39:47 by minsunki         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -59,8 +59,10 @@ SRCS_B		=	$(SRCS) \
 				ft_lstlast.c \
 				ft_dlstnew.c \
 				ft_dlstadd_front.c \
-				ft_dlstsize.c \
 				ft_dlstadd_back.c \
+				ft_dlstins_front.c \
+				ft_dlstins_back.c \
+				ft_dlstsize.c \
 				ft_dlstdelone.c \
 				ft_dlstclear.c \
 				ft_dlstiter.c \
@@ -100,6 +102,7 @@ clean		:
 fclean		:	clean
 			$(RM) $(NAME)
 
-re			:	fclean all
+re			:	fclean
+			$(MAKE) all
 
 .PHONY:		all clean fclean .c.o re bonus

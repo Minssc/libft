@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_dlstadd_back.c                                  :+:      :+:    :+:   */
+/*   ft_dlstins_back.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: minsunki <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: minsunki <minsunki@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/04 18:54:58 by minsunki          #+#    #+#             */
-/*   Updated: 2021/06/11 20:29:29 by minsunki         ###   ########.fr       */
+/*   Created: 2021/06/11 20:30:04 by minsunki          #+#    #+#             */
+/*   Updated: 2021/06/11 20:37:22 by minsunki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void		ft_dlstadd_back(t_dlist **lst, t_dlist *new)
+void		ft_dlstins_back(t_dlist **lst, t_dlist *new)
 {
-	t_dlist	*t;
-
 	if (!new || !lst)
 		return ;
-	t = ft_dlstlast(*lst);
-	if (!t)
+	if (!*lst)
 		*lst = new;
 	else
 	{
-		t->next = new;
-		new->prev = t;
+		new->next = lst->next;
+		new->prev = lst;
+		if (lst->next)
+			lst->next->prev = new;
+		lst->next = new;
 	}
 }

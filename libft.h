@@ -6,7 +6,7 @@
 /*   By: minsunki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/04 13:00:40 by minsunki          #+#    #+#             */
-/*   Updated: 2021/06/10 17:46:33 by minsunki         ###   ########.fr       */
+/*   Updated: 2021/06/11 20:37:53 by minsunki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,6 +104,8 @@ t_dlist			*ft_dlstlast(t_dlist *lst);
 t_dlist			*ft_dlstfirst(t_dlist *lst);
 void			ft_dlstadd_front(t_dlist **lst, t_dlist *new);
 void			ft_dlstadd_back(t_dlist **lst, t_dlist *new);
+void			ft_dlstins_front(t_dlist **lst, t_dlist *new);
+void			ft_dlstins_back(t_dlist **lst, t_dlist *new);
 int				ft_dlstsize(t_dlist *lst);
 void			ft_dlstdelone(t_dlist *lst, void (*del)(void *));
 void			ft_dlstclear(t_dlist **lst, void (*del)(void *));
