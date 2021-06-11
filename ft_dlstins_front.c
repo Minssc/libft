@@ -6,7 +6,7 @@
 /*   By: minsunki <minsunki@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/11 20:16:58 by minsunki          #+#    #+#             */
-/*   Updated: 2021/06/11 20:53:23 by minsunki         ###   ########.fr       */
+/*   Updated: 2021/06/11 21:01:34 by minsunki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void		ft_dlstins_front(t_dlist **lst, t_dlist *new)
 	if (!new || !lst)
 		return ;
 	if (!*lst)
+		*lst = new;
+	else
 	{
 		new->prev = (*lst)->prev;
 		new->next = *lst;
