@@ -6,7 +6,7 @@
 /*   By: minsunki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 18:55:13 by minsunki          #+#    #+#             */
-/*   Updated: 2021/06/11 20:28:20 by minsunki         ###   ########.fr       */
+/*   Updated: 2021/06/11 20:52:17 by minsunki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,12 @@ void	ft_dlstadd_front(t_dlist **lst, t_dlist *new)
 
 	if (!new || !lst)
 		return ;
-	t = ft_dlstfirst(*lst)
+	t = ft_dlstfirst(*lst);
 	if (!t)
 		*lst = new;
 	else
 	{
 		t->prev = new;
-		new->next = lst;
+		new->next = *lst;
 	}
 }
