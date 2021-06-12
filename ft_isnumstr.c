@@ -6,7 +6,7 @@
 /*   By: minsunki <minsunki@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/06 18:12:46 by minsunki          #+#    #+#             */
-/*   Updated: 2021/06/06 18:13:40 by minsunki         ###   ########.fr       */
+/*   Updated: 2021/06/12 21:18:37 by minsunki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int		ft_isnumstr(char *str)
 {
 	while (*str)
 	{
-		if (!ft_isdigit(*str))
+		if (!ft_isdigit(*str) && *str != '-')
 			return (0);
 		str++;
 	}
