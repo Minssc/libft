@@ -6,7 +6,7 @@
 /*   By: minsunki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 18:55:24 by minsunki          #+#    #+#             */
-/*   Updated: 2021/06/10 17:44:08 by minsunki         ###   ########.fr       */
+/*   Updated: 2021/07/01 19:11:23 by minsunki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ static void	dnext(t_dlist *lst, void (*del)(void *))
 	}
 }
 
-void		ft_dlstclear(t_dlist **lst, void (*del)(void *))
+void	ft_dlstclear(t_dlist **lst, void (*del)(void *))
 {
 	if (!del || !lst || !*lst)
 		return ;

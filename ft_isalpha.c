@@ -6,11 +6,11 @@
 /*   By: minsunki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/04 13:03:57 by minsunki          #+#    #+#             */
-/*   Updated: 2021/03/03 20:24:30 by minsunki         ###   ########.fr       */
+/*   Updated: 2021/07/01 19:16:23 by minsunki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_isalpha(int c)
+int	ft_isalpha(int c)
 {
 	if (('a' <= c && c <= 'z') || ('A' <= c && c <= 'Z'))
 		return (1);

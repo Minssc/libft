@@ -6,28 +6,36 @@
 /*   By: minsunki <minsunki@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/19 20:38:01 by minsunki          #+#    #+#             */
-/*   Updated: 2021/05/19 20:39:58 by minsunki         ###   ########.fr       */
+/*   Updated: 2021/07/01 18:37:19 by minsunki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int			ft_absi(int v)
+int	ft_absi(int v)
 {
-	return (v < 0 ? -v : v);
+	if (v < 0)
+		return (-v);
+	return (v);
 }
 
 long long	ft_absl(long long v)
 {
-	return (v < 0 ? -v : v);
+	if (v < 0)
+		return (-v);
+	return (v);
 }
 
-float		ft_absf(float v)
+float	ft_absf(float v)
 {
-	return (v < 0 ? -v : v);
+	if (v < 0)
+		return (-v);
+	return (v);
 }
 
-double		ft_absd(double v)
+double	ft_absd(double v)
 {
-	return (v < 0 ? -v : v);
+	if (v < 0)
+		return (-v);
+	return (v);
 }

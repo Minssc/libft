@@ -6,11 +6,11 @@
 /*   By: minsunki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/05 13:10:51 by minsunki          #+#    #+#             */
-/*   Updated: 2021/03/03 20:26:19 by minsunki         ###   ########.fr       */
+/*   Updated: 2021/07/01 19:34:01 by minsunki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_tolower(int c)
+int	ft_tolower(int c)
 {
 	if ('A' <= c && c <= 'Z')
 		return (c + 32);

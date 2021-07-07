@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_dlistnew.c                                      :+:      :+:    :+:   */
+/*   ft_dlstnew.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: minsunki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 18:54:39 by minsunki          #+#    #+#             */
-/*   Updated: 2021/06/09 23:08:53 by minsunki         ###   ########.fr       */
+/*   Updated: 2021/07/01 19:14:13 by minsunki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@ t_dlist	*ft_dlstnew(void *content)
 {
 	t_dlist	*new;
 
-	if (!(new = malloc(sizeof(t_dlist))))
+	new = malloc(sizeof(t_dlist));
+	if (!new)
 		return (0);
 	new->content = content;
 	new->prev = 0;

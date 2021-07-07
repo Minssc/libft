@@ -6,13 +6,13 @@
 /*   By: minsunki <minsunki@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/09 23:37:23 by minsunki          #+#    #+#             */
-/*   Updated: 2021/06/10 00:02:04 by minsunki         ###   ########.fr       */
+/*   Updated: 2021/07/01 19:29:29 by minsunki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void		ft_qpush(t_que *q, void *v)
+void	ft_qpush(t_que *q, void *v)
 {
 	t_dlist	*new;
 
@@ -22,7 +22,7 @@ void		ft_qpush(t_que *q, void *v)
 		q->head = q->tail;
 }
 
-void		ft_qpop(t_que *q)
+void	ft_qpop(t_que *q)
 {
 	t_dlist	*tmp;
 
@@ -35,19 +35,19 @@ void		ft_qpop(t_que *q)
 		q->tail = 0;
 }
 
-void		*ft_qtop(t_que *q)
+void	*ft_qtop(t_que *q)
 {
 	if (!q->head)
 		return (0);
 	return (q->head->content);
 }
 
-int			ft_qempty(t_que *q)
+int	ft_qempty(t_que *q)
 {
 	return (!q->size);
 }
 
-int			ft_qsize(t_que *q)
+int	ft_qsize(t_que *q)
 {
 	return (q->size);
 }

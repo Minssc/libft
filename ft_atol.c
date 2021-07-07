@@ -6,24 +6,18 @@
 /*   By: minsunki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/26 13:05:11 by minsunki          #+#    #+#             */
-/*   Updated: 2021/06/06 18:36:15 by minsunki         ###   ########.fr       */
+/*   Updated: 2021/07/01 19:08:33 by minsunki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-static int	ft_isspace(char c)
-{
-	return (c == '\v' || c == '\t' || c == '\r' || c == '\n' || c == '\f' ||
-																	c == ' ');
-}
 
 long long	ft_atol(const char *str)
 {
 	long long			result;
 	int					is_neg;
 
-	while (ft_isspace(*str))
+	while (ft_strchr(" \v\t\r\n\f", *str))
 		str++;
 	is_neg = (*str == '-');
 	if (*str == '+' || *str == '-')
@@ -35,5 +29,7 @@ long long	ft_atol(const char *str)
 		result += *str - '0';
 		str++;
 	}
-	return (is_neg ? -result : result);
+	if (is_neg)
+		return (-result);
+	return (result);
 }

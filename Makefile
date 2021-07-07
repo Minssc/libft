@@ -6,7 +6,7 @@
 #    By: minsunki <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/06 13:03:52 by minsunki          #+#    #+#              #
-#    Updated: 2021/06/11 20:39:47 by minsunki         ###   ########.fr        #
+#    Updated: 2021/07/02 02:07:00 by minsunki         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -104,5 +104,8 @@ fclean		:	clean
 
 re			:	fclean
 			$(MAKE) all
+
+so			:	$(OBJS)
+			gcc -nostartfiles -shared -o libft.so $(OBJS)
 
 .PHONY:		all clean fclean .c.o re bonus

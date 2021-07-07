@@ -6,13 +6,13 @@
 /*   By: minsunki <minsunki@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/10 17:21:35 by minsunki          #+#    #+#             */
-/*   Updated: 2021/06/10 17:47:00 by minsunki         ###   ########.fr       */
+/*   Updated: 2021/07/01 19:29:47 by minsunki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void		ft_qclear(t_que *q, void (*del)(void *))
+void	ft_qclear(t_que *q, void (*del)(void *))
 {
 	if (!q)
 		return ;

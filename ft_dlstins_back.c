@@ -6,13 +6,13 @@
 /*   By: minsunki <minsunki@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/11 20:30:04 by minsunki          #+#    #+#             */
-/*   Updated: 2021/06/11 20:53:51 by minsunki         ###   ########.fr       */
+/*   Updated: 2021/07/01 19:12:11 by minsunki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void		ft_dlstins_back(t_dlist **lst, t_dlist *new)
+void	ft_dlstins_back(t_dlist **lst, t_dlist *new)
 {
 	if (!new || !lst)
 		return ;

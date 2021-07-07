@@ -6,7 +6,7 @@
 /*   By: minsunki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/14 13:07:06 by minsunki          #+#    #+#             */
-/*   Updated: 2021/03/03 20:30:07 by minsunki         ###   ########.fr       */
+/*   Updated: 2021/07/01 19:33:08 by minsunki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	int i;
+	int	i;
 
 	i = ft_strlen(s) + 1;
 	while (i--)

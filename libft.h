@@ -6,7 +6,7 @@
 /*   By: minsunki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/04 13:00:40 by minsunki          #+#    #+#             */
-/*   Updated: 2021/06/11 20:37:53 by minsunki         ###   ########.fr       */
+/*   Updated: 2021/07/07 08:56:42 by minsunki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,27 +21,27 @@
 # endif
 # include <fcntl.h>
 
-typedef struct	s_list
+typedef struct s_list
 {
 	void			*content;
 	struct s_list	*next;
 }				t_list;
 
-typedef struct	s_dlist
+typedef struct s_dlist
 {
 	void			*content;
 	struct s_dlist	*prev;
 	struct s_dlist	*next;
 }				t_dlist;
 
-typedef struct	s_que
+typedef struct s_que
 {
 	t_dlist		*head;
 	t_dlist		*tail;
 	int			size;
 }				t_que;
 
-typedef struct	s_dque
+typedef struct s_dque
 {
 	t_dlist		*head;
 	t_dlist		*tail;
@@ -61,7 +61,7 @@ size_t			ft_strlcat(char *dest, const char *src, size_t size);
 char			*ft_strchr(const char *s, int c);
 char			*ft_strrchr(const char *s, int c);
 char			*ft_strnstr(const char *haystack, const char *needle,
-																size_t len);
+					size_t len);
 int				ft_strncmp(const char *s1, const char *s2, size_t n);
 int				ft_atoi(const char *str);
 long long		ft_atol(const char *str);
@@ -97,7 +97,7 @@ void			ft_lstdelone(t_list *lst, void (*del)(void *));
 void			ft_lstclear(t_list **lst, void (*del)(void *));
 void			ft_lstiter(t_list *lst, void (*f)(void *));
 t_list			*ft_lstmap(t_list *lst, void *(*f)(void *),
-													void (*del)(void *));
+					void (*del)(void *));
 
 t_dlist			*ft_dlstnew(void *content);
 t_dlist			*ft_dlstlast(t_dlist *lst);
@@ -111,16 +111,18 @@ void			ft_dlstdelone(t_dlist *lst, void (*del)(void *));
 void			ft_dlstclear(t_dlist **lst, void (*del)(void *));
 void			ft_dlstiter(t_dlist *lst, void (*f)(void *));
 t_dlist			*ft_dlstmap(t_dlist *lst, void *(*f)(void *),
-													void (*del)(void *));
+					void (*del)(void *));
 int				get_next_line(int fd, char **line);
 void			get_next_line_clear(void);
 
 int				ft_maxi(int a, int b);
+size_t			ft_maxs(size_t a, size_t b);
 long long		ft_maxll(long long a, long long b);
 float			ft_maxf(float a, float b);
 double			ft_maxd(double a, double b);
 
 int				ft_mini(int a, int b);
+size_t			ft_mins(size_t a, size_t b);
 long long		ft_minll(long long a, long long b);
 float			ft_minf(float a, float b);
 double			ft_maxd(double a, double b);

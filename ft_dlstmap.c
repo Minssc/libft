@@ -6,7 +6,7 @@
 /*   By: minsunki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 18:56:21 by minsunki          #+#    #+#             */
-/*   Updated: 2021/06/09 23:11:53 by minsunki         ###   ########.fr       */
+/*   Updated: 2021/07/01 19:13:31 by minsunki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,8 @@ t_dlist	*ft_dlstmap(t_dlist *lst, void *(*f)(void *), void (*del)(void *))
 	ret = 0;
 	while (lst)
 	{
-		if (!(tmp = ft_dlstnew((*f)(lst->content))))
+		tmp = ft_dlstnew((*f)(lst->content));
+		if (!tmp)
 		{
 			ft_dlstclear(&ret, del);
 			return (0);

@@ -6,28 +6,43 @@
 /*   By: minsunki <minsunki@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/06 20:12:37 by minsunki          #+#    #+#             */
-/*   Updated: 2021/05/06 20:17:51 by minsunki         ###   ########.fr       */
+/*   Updated: 2021/07/01 19:26:06 by minsunki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int			ft_mini(int a, int b)
+int	ft_mini(int a, int b)
 {
-	return (a < b ? a : b);
+	if (a < b)
+		return (a);
+	return (b);
+}
+
+size_t	ft_mins(size_t a, size_t b)
+{
+	if (a < b)
+		return (a);
+	return (b);
 }
 
 long long	ft_minll(long long a, long long b)
 {
-	return (a < b ? a : b);
+	if (a < b)
+		return (a);
+	return (b);
 }
 
-float		ft_minf(float a, float b)
+float	ft_minf(float a, float b)
 {
-	return (a < b ? a : b);
+	if (a < b)
+		return (a);
+	return (b);
 }
 
-double		ft_mind(double a, double b)
+double	ft_mind(double a, double b)
 {
-	return (a < b ? a : b);
+	if (a < b)
+		return (a);
+	return (b);
 }

@@ -6,7 +6,7 @@
 /*   By: minsunki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/27 13:00:56 by minsunki          #+#    #+#             */
-/*   Updated: 2021/03/03 23:48:12 by minsunki         ###   ########.fr       */
+/*   Updated: 2021/07/01 19:32:27 by minsunki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 
 	if (!s || !f)
 		return (0);
-	if (!(str = ft_strdup(s)))
+	str = ft_strdup(s);
+	if (!str)
 		return (0);
 	i = 0;
 	while (str[i])

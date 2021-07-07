@@ -6,28 +6,43 @@
 /*   By: minsunki <minsunki@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/06 20:11:19 by minsunki          #+#    #+#             */
-/*   Updated: 2021/05/07 01:13:02 by minsunki         ###   ########.fr       */
+/*   Updated: 2021/07/01 19:26:26 by minsunki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int				ft_maxi(int a, int b)
+int	ft_maxi(int a, int b)
 {
-	return (a < b ? b : a);
+	if (a < b)
+		return (b);
+	return (a);
 }
 
-long long		ft_maxll(long long a, long long b)
+size_t	ft_maxs(size_t a, size_t b)
 {
-	return (a < b ? b : a);
+	if (a < b)
+		return (b);
+	return (a);
 }
 
-float			ft_maxf(float a, float b)
+long long	ft_maxll(long long a, long long b)
 {
-	return (a < b ? b : a);
+	if (a < b)
+		return (b);
+	return (a);
 }
 
-double			ft_maxd(double a, double b)
+float	ft_maxf(float a, float b)
 {
-	return (a < b ? b : a);
+	if (a < b)
+		return (b);
+	return (a);
+}
+
+double	ft_maxd(double a, double b)
+{
+	if (a < b)
+		return (b);
+	return (a);
 }

@@ -6,7 +6,7 @@
 /*   By: minsunki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/26 13:03:11 by minsunki          #+#    #+#             */
-/*   Updated: 2021/03/04 19:52:43 by minsunki         ###   ########.fr       */
+/*   Updated: 2021/07/01 19:18:03 by minsunki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ static int	ft_digs(int n)
 {
 	int		ret;
 
-	ret = (n <= 0 ? 1 : 0);
+	ret = (n <= 0);
 	while (n)
 	{
 		n /= 10;
@@ -25,7 +25,7 @@ static int	ft_digs(int n)
 	return (ret);
 }
 
-char		*ft_itoa(int n)
+char	*ft_itoa(int n)
 {
 	int		dig;
 	int		neg;
@@ -35,7 +35,8 @@ char		*ft_itoa(int n)
 	dig = ft_digs(n);
 	if (n == -2147483648)
 		return (ft_strdup("-2147483648"));
-	if (!(ret = (char *)malloc(sizeof(char) * (dig + 1))))
+	ret = (char *)malloc(sizeof(char) * (dig + 1));
+	if (!ret)
 		return (0);
 	ret[dig] = 0;
 	if (n < 0)

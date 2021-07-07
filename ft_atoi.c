@@ -6,27 +6,18 @@
 /*   By: minsunki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/26 13:05:11 by minsunki          #+#    #+#             */
-/*   Updated: 2021/03/04 19:30:44 by minsunki         ###   ########.fr       */
+/*   Updated: 2021/07/07 09:13:19 by minsunki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_isspace(char c)
-{
-	if (c == '\v' || c == '\t' || c == '\r')
-		return (1);
-	if (c == '\n' || c == '\f' || c == ' ')
-		return (1);
-	return (0);
-}
-
-int			ft_atoi(const char *str)
+int	ft_atoi(const char *str)
 {
 	unsigned long long	result;
 	int					is_neg;
 
-	while (ft_isspace(*str))
+	while (ft_strchr(" \v\t\r\n\f", *str))
 		str++;
 	is_neg = (*str == '-');
 	if (*str == '+' || *str == '-')
@@ -42,5 +33,7 @@ int			ft_atoi(const char *str)
 		return (-1);
 	if (result > 2147483648 && is_neg)
 		return (0);
-	return (is_neg ? -result : result);
+	if (is_neg)
+		return (-result);
+	return (result);
 }

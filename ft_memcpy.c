@@ -6,7 +6,7 @@
 /*   By: minsunki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/07 13:05:54 by minsunki          #+#    #+#             */
-/*   Updated: 2021/03/04 01:59:32 by minsunki         ###   ########.fr       */
+/*   Updated: 2021/07/01 19:22:04 by minsunki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	unsigned char *pdest;
-	unsigned char *psrc;
+	unsigned char	*pdest;
+	unsigned char	*psrc;
 
 	if (!dest && !src)
 		return (0);

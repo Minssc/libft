@@ -6,7 +6,7 @@
 /*   By: minsunki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/29 13:00:58 by minsunki          #+#    #+#             */
-/*   Updated: 2021/03/04 20:12:52 by minsunki         ###   ########.fr       */
+/*   Updated: 2021/07/01 19:23:56 by minsunki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	char c;
+	char	c;
 
 	if (fd < 0)
 		return ;
